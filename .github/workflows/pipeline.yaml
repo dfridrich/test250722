@@ -16,4 +16,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
+      - run: pip install --upgrade pip
+      - run: python3 -m unittest test_main.py
+      - run: zip -r app.zip main.py test_main.py
